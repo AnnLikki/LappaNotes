@@ -1,0 +1,12 @@
+package com.example.android.lappanotes.data.database.entity
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "notes")
+data class Note(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val text: String,
+    val timestamp: Long = System.currentTimeMillis(),
+    val tags: List<String> = emptyList()
+)

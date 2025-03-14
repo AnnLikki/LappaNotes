@@ -57,9 +57,12 @@ dependencies {
 
     // Room
     implementation libs.androidx.room.runtime
+    implementation libs.androidx.junit.ktx
+    implementation libs.core.ktx
     kapt libs.androidx.room.compiler
     implementation libs.androidx.lifecycle.viewmodel
     implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.room.ktx
 
     // Navigation
     implementation libs.androidx.navigation.fragment
@@ -72,4 +75,9 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation libs.androidx.runner
+    androidTestImplementation libs.androidx.rules
+
+    // Coroutines testing
+    testImplementation libs.kotlinx.coroutines.test
 }
