@@ -4,15 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import com.example.android.lappanotes.data.database.dao.NoteDao
+import com.example.android.lappanotes.data.database.dao.NoteTagDao
 import com.example.android.lappanotes.data.database.entity.Note
-import com.example.android.lappanotes.data.database.utils.Converters
+import com.example.android.lappanotes.data.database.entity.NoteTagCrossRef
 
-@Database(entities = [Note::class], version = 1, exportSchema = false)
-@TypeConverters(Converters::class)
+@Database(entities = [Note::class, NoteTagCrossRef::class], version = 1, exportSchema = false)
 abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
+    abstract fun noteTagDao(): NoteTagDao
 
     companion object {
         @Volatile
