@@ -56,18 +56,6 @@ class NoteDaoTest {
     }
 
     @Test
-    fun insertNote() = runTest {
-        val note = Note(text = "Test note")
-        
-        val insertedId = noteDao.insert(note)
-        val result = noteDao.getNoteById(insertedId.toInt())
-        
-        assertNotNull(result)
-        assertEquals("Test note", result?.text)
-        assertTrue(insertedId > 0)
-    }
-
-    @Test
     fun insertTagForNote() = runTest {
         
         val note = Note(text = "Test note")
@@ -110,11 +98,13 @@ class NoteDaoTest {
     @Test
     fun insertAndGetNoteById() = runTest {
         val note = Note(text = "Test note")
+
         val insertedId = noteDao.insert(note)
-        
         val result = noteDao.getNoteById(insertedId.toInt())
-        
-        assertEquals(note.text, result?.text)
+
+        assertNotNull(result)
+        assertEquals("Test note", result?.text)
+        assertEquals(insertedId.toInt(), result?.id)
     }
 
     @Test

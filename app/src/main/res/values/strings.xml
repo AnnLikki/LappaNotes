@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lappa Notes</string>
+    <string name="hint_text">Enter text</string>
+    <string name="hint_tags">Enter tags (comma separated)</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="delete_confirmation">CONFIRM DELETE!!!</string>
+    <string name="cancel">CANCEL!!!!!!!</string>
+    <string name="empty_text_error">ADD SOME TEXT TO THE NOTE BITCH</string>
 </resources>
