@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.android.lappanotes.data.database.entity.Note
 import com.example.android.lappanotes.data.database.entity.NoteTagCrossRef
+import com.example.android.lappanotes.data.database.entity.NoteWithTags
 
 @Dao
 interface NoteDao {
@@ -29,15 +30,10 @@ interface NoteDao {
     fun getAllTags(): LiveData<List<String>>
 
     @Transaction
-    @Query("SELECT * FROM notes")
-    fun getNotesWithTags(): LiveData<List<NoteWithTags>>
+    @Query("SELECT * FROM notes ORDER BY timestamp DESC")
+    fun getAllNotesWithTags(): LiveData<List<NoteWithTags>>
 
-    data class NoteWithTags(
-        @Embedded val note: Note,
-        @Relation(
-            parentColumn = "id",
-            entityColumn = "noteId"
-        )
-        val tags: List<NoteTagCrossRef>
-    )
+    @Transaction
+    @Query("SELECT * FROM notes WHERE id IN (SELECT noteId FROM note_tags WHERE tag = :tag) ORDER BY timestamp DESC")
+    fun getNotesWithTagsByTag(tag: String): LiveData<List<NoteWithTags>>
 }
