@@ -12,15 +12,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/stylePanel"
         android:layout_width="match_parent"
-        android:layout_height="66dp">
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/panel_background">
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/button_round_ripple"            android:clickable="true"
-            app:backgroundTint="#FF6200EE"
+            android:background="@drawable/button_round_ripple"
+            android:clickable="true"
+            app:backgroundTint="#B94469"
             android:contentDescription="Star button"
             android:focusable="true"
             android:padding="8dp"
@@ -34,11 +41,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="Button"
+            android:background="@drawable/button_round_ripple"
+            android:clickable="true"
+            app:backgroundTint="#CD587D"
+            android:contentDescription="Star button"
+            android:focusable="true"
+            android:padding="8dp"
+            app:icon="@drawable/ic_star"
+            app:iconSize="34dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button3"
             app:layout_constraintHorizontal_bias="0.5"
@@ -46,11 +60,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="Button"
+            android:background="@drawable/button_round_ripple"
+            android:clickable="true"
+            app:backgroundTint="#7BA143"
+            android:contentDescription="Star button"
+            android:focusable="true"
+            android:padding="8dp"
+            app:icon="@drawable/ic_star"
+            app:iconSize="34dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button4"
             app:layout_constraintHorizontal_bias="0.5"
@@ -58,11 +79,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button4"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="Button"
+            android:background="@drawable/button_round_ripple"
+            android:clickable="true"
+            app:backgroundTint="#A4CF67"
+            android:contentDescription="Star button"
+            android:focusable="true"
+            android:padding="8dp"
+            app:icon="@drawable/ic_star"
+            app:iconSize="34dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -71,9 +99,19 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notePanel"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/panel_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
