@@ -9,14 +9,14 @@ import androidx.room.Relation
 data class Note(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val text: String,
-    val timestamp: Long = System.currentTimeMillis()
+    val timestamp: Long = System.currentTimeMillis(),
 )
 
 data class NoteWithTags(
     @Embedded val note: Note,
     @Relation(
         parentColumn = "id",
-        entityColumn = "noteId"
+        entityColumn = "noteId",
     )
-    val tags: List<NoteTagCrossRef>
+    val tags: List<NoteTagCrossRef>,
 )

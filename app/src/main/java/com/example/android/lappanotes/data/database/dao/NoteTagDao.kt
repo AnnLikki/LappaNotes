@@ -1,13 +1,16 @@
 package com.example.android.lappanotes.data.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.android.lappanotes.data.database.entity.Note
 import com.example.android.lappanotes.data.database.entity.NoteTagCrossRef
 
 @Dao
 interface NoteTagDao {
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTagForNote(noteTag: NoteTagCrossRef)
 

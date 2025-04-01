@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -84,4 +85,11 @@ dependencies {
     // Coroutines testing
     testImplementation libs.kotlinx.coroutines.test
     androidTestImplementation libs.kotlinx.coroutines.test
+}
+
+ktlint {
+    version = libs.versions.ktlint
+    verbose = true
+    android = true
+    outputToConsole = true
 }
