@@ -1,6 +1,5 @@
 package com.example.android.lappanotes.data.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.room.Transaction
 import com.example.android.lappanotes.data.database.dao.NoteDao
@@ -11,21 +10,27 @@ import com.example.android.lappanotes.data.database.entity.NoteWithTags
 
 class NoteRepository(
     private val noteDao: NoteDao,
-    private val noteTagDao: NoteTagDao
+    private val noteTagDao: NoteTagDao,
 ) {
     val allNotes: LiveData<List<Note>> = noteDao.getAllNotes()
     val allNotesWithTags: LiveData<List<NoteWithTags>> = noteDao.getAllNotesWithTags()
     val allTags: LiveData<List<String>> = noteDao.getAllTags()
 
-    suspend fun getNoteById(noteId:Int) = noteDao.getNoteById(noteId)
+    suspend fun getNoteById(noteId: Int) = noteDao.getNoteById(noteId)
+
     suspend fun insert(note: Note) = noteDao.insert(note)
+
     suspend fun update(note: Note) = noteDao.update(note)
+
     suspend fun delete(note: Note) = noteDao.delete(note)
 
-    suspend fun insertTagsForNote(noteId: Int, tags: List<String>) {
+    suspend fun insertTagsForNote(
+        noteId: Int,
+        tags: List<String>,
+    ) {
         deleteTagsForNote(noteId)
         tags.filter { it.isNotBlank() }.forEach {
-            noteTagDao.insertTagForNote(NoteTagCrossRef(noteId, it.trim()))
+            noteTagDao.insertTagForNote(NoteTagCrossRef(noteId, it.trim().lowercase()))
         }
     }
 
@@ -36,7 +41,10 @@ class NoteRepository(
     fun getAllUniqueTags(): LiveData<List<String>> = noteTagDao.getAllUniqueTags()
 
     @Transaction
-    suspend fun insertNoteWithTags(note: Note, tags: List<String>) {
+    suspend fun insertNoteWithTags(
+        note: Note,
+        tags: List<String>,
+    ) {
         val noteId = noteDao.insert(note)
         insertTagsForNote(noteId.toInt(), tags)
     }

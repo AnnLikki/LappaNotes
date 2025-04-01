@@ -11,11 +11,11 @@ import androidx.room.ForeignKey
             entity = Note::class,
             parentColumns = ["id"],
             childColumns = ["noteId"],
-            onDelete = ForeignKey.CASCADE
-        )
-    ]
+            onDelete = ForeignKey.CASCADE,
+        ),
+    ],
 )
 data class NoteTagCrossRef(
     val noteId: Int,
-    val tag: String
+    val tag: String,
 )

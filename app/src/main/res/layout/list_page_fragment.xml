@@ -12,7 +12,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="400dp"
+        android:background="@drawable/panel_background"
+        android:layout_margin="12dp">
 
         <ViewSwitcher
             android:id="@+id/tagContainer"
@@ -43,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.chip.ChipGroup
+            <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroupVertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
