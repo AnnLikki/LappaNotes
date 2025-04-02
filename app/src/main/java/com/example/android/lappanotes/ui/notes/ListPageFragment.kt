@@ -91,7 +91,7 @@ class ListPageFragment : Fragment() {
             isExpanded = !isExpanded
             viewSwitcher.showNext()
             expandButton.setImageResource(
-                if (isExpanded) R.drawable.ic_star else R.drawable.ic_star,
+                if (isExpanded) R.drawable.ic_collapse else R.drawable.ic_expand,
             )
             setupChipGroup(currentTags, viewModel.searchQuery.value)
         }
