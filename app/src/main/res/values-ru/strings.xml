@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty_text_error">Нельзя создать пустую заметку</string>
+    <string name="clear_filter_button">Очистить фильтр</string>
+    <string name="expand_filters_button">Развернуть тэги</string>
+    <string name="add_note_button">Добавить заметку</string>
+    <string name="enter_note_hint">Введите текст заметки...</string>
+    <string name="hint_tags">Введите тэги (через запятую)</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_confirmation">Подтвердите удаление</string>
+    <string name="cancel">Отменить</string>
+</resources>
