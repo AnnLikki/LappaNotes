@@ -109,7 +109,7 @@ class ListPageFragment : Fragment() {
     private fun showDeleteDialog(noteId: Int) {
         AlertDialog.Builder(requireContext())
             .setMessage(R.string.delete_confirmation)
-            .setPositiveButton("DELETE!!!") { _, _ ->
+            .setPositiveButton(R.string.delete) { _, _ ->
                 lifecycleScope.launch {
                     viewModel.deleteNoteById(noteId)
                 }

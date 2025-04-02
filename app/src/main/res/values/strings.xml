@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Lappa Notes</string>
-    <string name="hint_text">Enter text</string>
+    <string name="app_name" translatable="false">Lappa Notes</string>
     <string name="hint_tags">Enter tags (comma separated)</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
-    <string name="delete_confirmation">CONFIRM DELETE!!!</string>
-    <string name="cancel">CANCEL!!!!!!!</string>
-    <string name="empty_text_error">ADD SOME TEXT TO THE NOTE BITCH</string>
+    <string name="delete_confirmation">Confirm delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty_text_error">Cannot create empty note</string>
+    <string name="clear_filter_button">Clear Filter</string>
+    <string name="expand_filters_button">Expand Tags</string>
+    <string name="add_note_button">Add Note</string>
+    <string name="enter_note_hint">Enter note text...</string>
 </resources>

@@ -134,7 +134,7 @@
                 android:overScrollMode="always"
                 android:padding="16dp"
                 android:background="@android:color/transparent"
-                android:hint="Введите текст заметки" />
+                android:hint="@string/enter_note_hint" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
