@@ -60,7 +60,7 @@
             android:id="@+id/btnClearFilter"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_star"
+            android:src="@drawable/ic_clear"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/tagContainer"
             app:layout_constraintEnd_toStartOf="@id/btnExpand"
@@ -72,11 +72,11 @@
             android:id="@+id/btnExpand"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_star"
-            android:contentDescription="TODO"
+            android:src="@drawable/ic_expand"
             app:layout_constraintBottom_toBottomOf="@id/tagContainer"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Список заметок -->
@@ -95,10 +95,12 @@
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:contentDescription="TODO"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_add"
+        android:tint="@color/white"
+        app:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
